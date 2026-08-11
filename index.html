@@ -109,10 +109,21 @@
   /* ---- hero ---- */
   #hero{
     padding-top:96px;padding-bottom:76px;
-    background:radial-gradient(ellipse 1000px 560px at 50% 0%, #FBF6DE 0%, var(--bone) 68%);
+    background:
+      radial-gradient(ellipse 620px 360px at 50% -4%, rgba(246,220,0,.4) 0%, rgba(246,220,0,0) 72%),
+      var(--bone);
     text-align:center;
     position:relative;
+    overflow:hidden;
   }
+  #hero::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background-image:radial-gradient(rgba(16,16,20,.08) 1px, transparent 1px);
+    background-size:24px 24px;
+    -webkit-mask-image:radial-gradient(ellipse 640px 400px at 50% 0%, black 0%, transparent 72%);
+    mask-image:radial-gradient(ellipse 640px 400px at 50% 0%, black 0%, transparent 72%);
+  }
+  #hero .wrap{position:relative;z-index:1}
   .hero-tag{
     display:inline-flex;align-items:center;gap:10px;
     background:#fff;border:1px solid var(--line);border-radius:999px;
@@ -131,7 +142,6 @@
   }
   #hero .subhead{max-width:560px;margin:24px auto 0;font-size:1.15rem;color:var(--muted)}
   .hero-actions{display:flex;justify-content:center;gap:14px;margin-top:36px;flex-wrap:wrap}
-  .hero-note{margin-top:18px;font-size:.85rem;color:var(--muted)}
   #hero .btn-outline{background:#F1EEE0;color:var(--ink);border-color:transparent}
   #hero .btn-outline:hover{background:var(--navy);color:#fff}
 
@@ -300,13 +310,12 @@
 <section id="hero">
   <div class="wrap">
     <div class="hero-tag"><img src="Logo.jpg" alt="">Content Production &middot; Marketing &middot; Ads</div>
-    <h1>Content. Campaigns. <em>Leads</em>.</h1>
-    <p class="subhead">We shoot the content, run the campaigns, and bring organizations real leads — not reach.</p>
+    <h1>Content Production. Organic &amp; Paid Marketing.<br>Built for <em>Leads</em>.</h1>
+    <p class="subhead">We produce documentaries and social video for organizations, and run content and ad campaigns that bring qualified leads for your business.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="[BOOKING LINK]">Book a call</a>
       <a class="btn btn-outline" href="#work">See the work</a>
     </div>
-    <p class="hero-note mono">Islamabad, Pakistan — working nationwide.</p>
   </div>
 </section>
 
