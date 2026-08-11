@@ -45,8 +45,8 @@
   h1,h2{text-transform:uppercase}
   .mono{font-family:'IBM Plex Mono',monospace}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-  .work-grid,.svc-grid,.process-grid,.stat-grid,.testi-grid,.team-grid,.why-grid{min-width:0}
-  .work-grid>*,.svc-grid>*,.process-grid>*,.stat-grid>*,.testi-grid>*,.team-grid>*,.why-grid>*{min-width:0}
+  .work-grid,.svc-grid,.process-grid,.team-grid,.why-grid{min-width:0}
+  .work-grid>*,.svc-grid>*,.process-grid>*,.team-grid>*,.why-grid>*{min-width:0}
   .eyebrow{
     font-family:'IBM Plex Mono',monospace;
     font-size:.78rem;
@@ -200,28 +200,6 @@
   .process-step h3{font-size:1.08rem;margin-bottom:10px}
   .process-step p{color:var(--muted);font-size:.92rem}
 
-  /* ---- results ---- */
-  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:36px}
-  @media (max-width:700px){.stat-grid{grid-template-columns:1fr}}
-  .stat-card{
-    background:var(--navy-deep);border-radius:20px;padding:34px 30px;color:#fff;
-    display:flex;flex-direction:column;gap:6px;
-  }
-  .stat-card .num{font-family:'Anton',sans-serif;font-weight:800;font-size:3.4rem;color:var(--yellow)}
-  .stat-card .label{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#C7C5E8}
-  .stat-card .detail{font-size:.92rem;color:#DEDCFA;margin-top:8px}
-  .disclosure{
-    border:1.5px dashed var(--navy);border-radius:16px;padding:20px 24px;
-    font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:var(--muted);line-height:1.65;margin-bottom:40px;
-  }
-  .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:700px){.testi-grid{grid-template-columns:1fr}}
-  .testi-card{background:var(--bone);border:1px solid var(--line);border-radius:18px;padding:28px}
-  .testi-card .quote-mark{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--yellow-deep);line-height:1;margin-bottom:6px}
-  .testi-card p.quote{font-size:1rem;color:var(--ink);margin-bottom:16px}
-  .testi-who{font-size:.85rem;color:var(--muted)}
-  .testi-who strong{color:var(--ink)}
-
   /* ---- team ---- */
   #team{background:var(--bone-dim)}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:52px}
@@ -293,7 +271,6 @@
       <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
-      <a href="#results">Results</a>
       <a href="#team">Team</a>
     </nav>
     <div class="nav-cta">
@@ -447,47 +424,6 @@
   </div>
 </section>
 
-<!-- Results -->
-<section id="results">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Results</span>
-      <h2>What 30 days looked like.</h2>
-      <p>Two campaigns, two clients, one month each. Both briefs were the same: bring people through the door.</p>
-    </div>
-
-    <div class="stat-grid">
-      <div class="stat-card">
-        <span class="num">65</span>
-        <span class="label">Academic institute — students enrolled</span>
-        <p class="detail">Paid campaign built and run by us, from creative through to lead handover. Achieved in 30 days.</p>
-      </div>
-      <div class="stat-card">
-        <span class="num">38</span>
-        <span class="label">Digital marketing academy — clients acquired</span>
-        <p class="detail">Content marketing and performance marketing run together over a single 30-day period.</p>
-      </div>
-    </div>
-
-    <div class="disclosure">
-      Ad spend and internal campaign figures are withheld at our clients' request. We treat client data as confidential — yours will be handled the same way. Full breakdowns are shared on a call, with client permission.
-    </div>
-
-    <div class="testi-grid">
-      <div class="testi-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote">[Testimonial quote]</p>
-        <div class="testi-who"><strong>[Name]</strong> — [Role], [Organisation]</div>
-      </div>
-      <div class="testi-card">
-        <span class="quote-mark">&ldquo;</span>
-        <p class="quote">[Testimonial quote]</p>
-        <div class="testi-who"><strong>[Name]</strong> — [Role], [Organisation]</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Team / why us -->
 <section id="team">
   <div class="wrap">
@@ -586,7 +522,6 @@
           <li><a href="#work">Work</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#results">Results</a></li>
           <li><a href="#team">Team</a></li>
         </ul>
       </div>
