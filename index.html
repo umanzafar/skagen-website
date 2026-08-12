@@ -198,6 +198,8 @@
     transition:transform .25s ease, border-color .25s ease;
   }
   .video-card:hover{transform:translateY(-4px);border-color:var(--yellow)}
+  .video-card.embed{background:#000}
+  .video-card.embed iframe{width:100%;height:100%;border:0;display:block}
   .video-card.reel{aspect-ratio:9/16;align-items:flex-start;justify-content:flex-start}
   .video-grid.reels{grid-template-columns:repeat(4,1fr)}
   @media (max-width:640px){.video-grid.reels{grid-template-columns:repeat(2,1fr)}}
@@ -454,23 +456,11 @@
       <p>Field-shot documentaries and short films. Full case studies are being added as projects wrap — real client work only, nothing stock.</p>
     </div>
     <div class="video-grid docs">
-      <div class="video-card">
-        <span class="vc-muted">Sound off</span>
-        <span class="play-btn">&#9654;</span>
-        <div class="vc-bottom">
-          <span class="vc-caption">Documentary 01</span>
-          <div class="vc-progress"><i></i></div>
-          <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-        </div>
+      <div class="video-card embed">
+        <iframe src="https://player.vimeo.com/video/1217492082?title=0&amp;byline=0&amp;portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Documentary — KORT SCO"></iframe>
       </div>
-      <div class="video-card">
-        <span class="vc-muted">Sound off</span>
-        <span class="play-btn">&#9654;</span>
-        <div class="vc-bottom">
-          <span class="vc-caption">Documentary 02</span>
-          <div class="vc-progress"><i></i></div>
-          <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-        </div>
+      <div class="video-card embed">
+        <iframe src="https://player.vimeo.com/video/1217492020?title=0&amp;byline=0&amp;portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Documentary — Bhimber SCO"></iframe>
       </div>
       <div class="video-card">
         <span class="vc-muted">Sound off</span>
