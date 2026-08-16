@@ -254,6 +254,16 @@
   .result-label{font-size:.92rem;color:#C7C5E8;margin-top:-10px}
   .result-link{font-family:'IBM Plex Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--yellow)}
 
+  /* ---- view more ---- */
+  .view-more-wrap{text-align:center;margin-top:36px}
+  .view-more{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:3px;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .view-more:hover{color:var(--yellow);border-color:var(--yellow)}
+
   /* ---- testimonials ---- */
   .testi-track-wrap{
     overflow:hidden;width:100%;padding:14px 0 30px;
@@ -408,17 +418,17 @@
 
   /* ---- whatsapp floating widget ---- */
   .wa-float{
-    position:fixed;bottom:24px;right:24px;z-index:200;
-    width:58px;height:58px;border-radius:50%;background:#25D366;
+    position:fixed;bottom:26px;right:26px;z-index:200;
+    width:76px;height:76px;border-radius:50%;background:#25D366;
     display:flex;align-items:center;justify-content:center;
     box-shadow:0 10px 26px rgba(0,0,0,.4);
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .wa-float:hover{transform:scale(1.08);box-shadow:0 14px 32px rgba(0,0,0,.5)}
-  .wa-float svg{width:29px;height:29px;fill:#fff}
+  .wa-float svg{width:38px;height:38px;fill:#fff}
   @media (max-width:600px){
-    .wa-float{width:52px;height:52px;bottom:18px;right:18px}
-    .wa-float svg{width:26px;height:26px}
+    .wa-float{width:64px;height:64px;bottom:18px;right:18px}
+    .wa-float svg{width:32px;height:32px}
   }
 
   ::selection{background:var(--yellow);color:var(--black)}
@@ -431,7 +441,7 @@
     <a href="#" class="brand"><img src="Logo.jpg" alt="Skagen logo">Skagen</a>
     <input type="checkbox" id="navToggle">
     <nav class="nav-links">
-      <a href="#work">Work</a>
+      <a href="work.html">Work</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#team">Team</a>
@@ -451,7 +461,7 @@
     <p class="subhead">We Create &amp; market your content so you get noticed and chosen.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="[BOOKING LINK]">Book a call</a>
-      <a class="hero-link" href="#work">See our work &rarr;</a>
+      <a class="hero-link" href="work.html">See our work &rarr;</a>
     </div>
   </div>
 </section>
@@ -536,25 +546,8 @@
       <div class="video-card embed">
         <iframe src="https://player.vimeo.com/video/1217492020?title=0&amp;byline=0&amp;portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Bhimber SCO documentary"></iframe>
       </div>
-      <div class="video-card">
-        <span class="vc-muted">Sound off</span>
-        <span class="play-btn">&#9654;</span>
-        <div class="vc-bottom">
-          <span class="vc-caption">Documentary 03</span>
-          <div class="vc-progress"><i></i></div>
-          <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-        </div>
-      </div>
-      <div class="video-card">
-        <span class="vc-muted">Sound off</span>
-        <span class="play-btn">&#9654;</span>
-        <div class="vc-bottom">
-          <span class="vc-caption">Documentary 04</span>
-          <div class="vc-progress"><i></i></div>
-          <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-        </div>
-      </div>
     </div>
+    <div class="view-more-wrap"><a class="view-more" href="work.html#documentaries">View all documentaries &rarr;</a></div>
   </div>
 </section>
 
@@ -588,6 +581,7 @@
         <span class="video-cap">Reel 04</span>
       </div>
     </div>
+    <div class="view-more-wrap"><a class="view-more" href="work.html#reels">View all reels &rarr;</a></div>
   </div>
 </section>
 
@@ -628,35 +622,8 @@
         <div class="result-label">clients acquired in 30 days from content and paid ads run together.</div>
         <span class="result-link">View case study &rarr;</span>
       </a>
-      <a class="result-card" href="[CASE STUDY LINK]">
-        <div class="video-card">
-          <span class="case-badge">Case Study</span>
-          <span class="play-btn">&#9654;</span>
-          <div class="vc-bottom">
-            <span class="vc-caption">[Campaign name]</span>
-            <div class="vc-progress"><i></i></div>
-            <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-          </div>
-        </div>
-        <div class="result-num">[Number]</div>
-        <div class="result-label">[Result description, details to follow].</div>
-        <span class="result-link">View case study &rarr;</span>
-      </a>
-      <a class="result-card" href="[CASE STUDY LINK]">
-        <div class="video-card">
-          <span class="case-badge">Case Study</span>
-          <span class="play-btn">&#9654;</span>
-          <div class="vc-bottom">
-            <span class="vc-caption">[Campaign name]</span>
-            <div class="vc-progress"><i></i></div>
-            <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-          </div>
-        </div>
-        <div class="result-num">[Number]</div>
-        <div class="result-label">[Result description, details to follow].</div>
-        <span class="result-link">View case study &rarr;</span>
-      </a>
     </div>
+    <div class="view-more-wrap"><a class="view-more" href="work.html#case-studies">View all case studies &rarr;</a></div>
   </div>
 </section>
 
@@ -856,7 +823,7 @@
       <div class="foot-col">
         <h4>Navigate</h4>
         <ul>
-          <li><a href="#work">Work</a></li>
+          <li><a href="work.html">Work</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#team">Team</a></li>
