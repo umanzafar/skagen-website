@@ -348,20 +348,22 @@
 
   /* ---- about & founder (combined) ---- */
   #team{background:var(--bone-dim)}
-  .about-founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+  .about-founder-grid{display:grid;grid-template-columns:1fr 380px;gap:52px;align-items:center}
   @media (max-width:860px){.about-founder-grid{grid-template-columns:1fr}}
   .about-founder-text{display:flex;flex-direction:column;gap:36px}
   .af-block p{margin-bottom:14px;font-size:1.02rem;line-height:1.7;color:var(--ink)}
   .af-block p:last-child{margin-bottom:0}
   .af-heading{font-size:1.15rem;margin-bottom:14px;color:var(--ink)}
+  .af-heading-yellow{color:var(--yellow)}
   .af-block .founder-badge{
     display:inline-block;background:var(--yellow);color:var(--black);
     font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;text-transform:uppercase;
     letter-spacing:.05em;padding:6px 14px;border-radius:8px;transform:rotate(-2deg);margin-bottom:16px;
   }
   .about-founder-video{
-    position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;
+    position:relative;aspect-ratio:9/16;border-radius:22px;overflow:hidden;
     border:1px solid var(--line);background:#000;
+    max-width:360px;margin:0 auto;
   }
   .about-founder-video img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7}
   .af-play-btn{
@@ -725,24 +727,21 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">About</span>
-      <h2>The company, <em>and the person running it</em>.</h2>
-      <p>Skagen is a content and marketing company working with businesses and organisations internationally.</p>
+      <h2>Who <em>are we</em>?</h2>
     </div>
 
     <div class="about-founder-grid reveal">
       <div class="about-founder-text">
         <div class="af-block">
           <h3 class="af-heading">About Us</h3>
-          <p>We produce and market under one roof. Video, design, performance and production run as departments, each led by someone accountable for the output. Our own studio, our own equipment, our own post-production. Nothing is subcontracted.</p>
-          <p>Every client gets one point of contact, a fixed review process, and reporting on a set schedule. The process is the same whether a client is in Lahore or London.</p>
-          <p>Based in Pakistan. Founded and led by Huraira Ghafoor, known professionally as Sham Kashmiri, the SK in SK Productions and Marketing Agency.</p>
+          <p>For the last four years we have worked with international businesses and organisations from our base in AJK, Pakistan.</p>
+          <p>Video, design, performance and production run in-house as departments. Our own studio, our own equipment, nothing subcontracted.</p>
         </div>
         <div class="af-block">
           <span class="founder-badge">Rising Tech IT Award 2025</span>
-          <h3 class="af-heading">About the Founder: Huraira Ghafoor</h3>
-          <p>Huraira Ghafoor, known professionally as Sham Kashmiri, is the founder and CEO of Skagen.</p>
-          <p>A graduate in media and communication studies, he built the company on the premise that marketing is communication at scale.</p>
-          <p>In 2025 he received the Rising Tech IT Award from the Special Communications Organisation (SCO), a telecommunications organisation of Pakistan, in recognition of building and scaling Skagen into a full in-house production and marketing operation.</p>
+          <h3 class="af-heading af-heading-yellow">About the Founder: Huraira Ghafoor</h3>
+          <p>Huraira Ghafoor, known professionally as Sham Kashmiri, is the founder and CEO of Skagen and a media and communication graduate.</p>
+          <p>In 2025 he received the Rising Tech IT Award from the Special Communications Organisation (SCO), one of the largest telecommunications organisations in Pakistan, for building and scaling Skagen into a full in-house production and marketing operation.</p>
         </div>
       </div>
       <div class="about-founder-video">
