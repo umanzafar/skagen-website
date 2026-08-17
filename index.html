@@ -209,6 +209,15 @@
   .video-card.embed{background:#000}
   .video-card.embed iframe{width:100%;height:100%;border:0;display:block}
   .video-card.reel{aspect-ratio:9/16;align-items:flex-start;justify-content:flex-start}
+  .reel-sound-btn{
+    position:absolute;top:10px;right:10px;z-index:3;
+    width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;
+    background:rgba(0,0,0,.55);color:#fff;font-size:.95rem;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+  }
+  .reel-sound-btn:hover{background:rgba(0,0,0,.75)}
+  .reel-sound-btn.unmuted{background:var(--yellow);color:var(--black)}
   .video-grid.reels{grid-template-columns:repeat(4,1fr)}
   @media (max-width:640px){.video-grid.reels{grid-template-columns:repeat(2,1fr)}}
   .play-btn{
@@ -546,26 +555,10 @@
       <p>Vertical, caption-led, made for the feed.</p>
     </div>
     <div class="video-grid reels">
-      <div class="video-card reel">
-        <span class="vc-hook">[Hook text]</span>
-        <span class="play-btn">&#9654;</span>
-        <span class="video-cap">Reel 01</span>
-      </div>
-      <div class="video-card reel">
-        <span class="vc-hook">[Hook text]</span>
-        <span class="play-btn">&#9654;</span>
-        <span class="video-cap">Reel 02</span>
-      </div>
-      <div class="video-card reel">
-        <span class="vc-hook">[Hook text]</span>
-        <span class="play-btn">&#9654;</span>
-        <span class="video-cap">Reel 03</span>
-      </div>
-      <div class="video-card reel">
-        <span class="vc-hook">[Hook text]</span>
-        <span class="play-btn">&#9654;</span>
-        <span class="video-cap">Reel 04</span>
-      </div>
+      <div class="video-card reel embed"><iframe src="https://player.vimeo.com/video/1218997677?background=1&amp;muted=1&amp;autoplay=1&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Real estate USA client podcast reel"></iframe><button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button></div>
+      <div class="video-card reel embed"><iframe src="https://player.vimeo.com/video/1218997744?background=1&amp;muted=1&amp;autoplay=1&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Summer boot camp ad"></iframe><button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button></div>
+      <div class="video-card reel embed"><iframe src="https://player.vimeo.com/video/1218997765?background=1&amp;muted=1&amp;autoplay=1&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Motion graphic ad"></iframe><button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button></div>
+      <div class="video-card reel embed"><iframe src="https://player.vimeo.com/video/1218997727?background=1&amp;muted=1&amp;autoplay=1&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="German restaurant opening offer ad"></iframe><button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button></div>
     </div>
     <div class="view-more-wrap"><a class="view-more" href="work.html#reels">View all reels &rarr;</a></div>
   </div>
@@ -870,6 +863,51 @@
   matchFounderVideoHeight();
   window.addEventListener('resize', matchFounderVideoHeight);
   window.addEventListener('load', matchFounderVideoHeight);
+</script>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  if (window.Vimeo) {
+    var allPlayers = [];
+
+    document.querySelectorAll('.video-card.embed:not(.reel) iframe').forEach(function(iframe){
+      var p = new Vimeo.Player(iframe);
+      allPlayers.push(p);
+      p.on('play', function(){
+        allPlayers.forEach(function(other){ if (other !== p) other.pause(); });
+      });
+    });
+
+    var reelPlayers = [];
+    document.querySelectorAll('.video-card.reel.embed').forEach(function(card){
+      var iframe = card.querySelector('iframe');
+      var btn = card.querySelector('.reel-sound-btn');
+      var player = new Vimeo.Player(iframe);
+      reelPlayers.push({ player: player, btn: btn });
+      allPlayers.push(player);
+
+      btn.addEventListener('click', function(){
+        var isUnmuted = btn.classList.contains('unmuted');
+        if (isUnmuted) {
+          player.setMuted(true);
+          btn.classList.remove('unmuted');
+          btn.innerHTML = '&#128263;';
+        } else {
+          reelPlayers.forEach(function(rp){
+            if (rp.player !== player) {
+              rp.player.setMuted(true);
+              rp.btn.classList.remove('unmuted');
+              rp.btn.innerHTML = '&#128263;';
+            }
+          });
+          allPlayers.forEach(function(other){ if (other !== player) other.pause(); });
+          player.setMuted(false);
+          btn.classList.add('unmuted');
+          btn.innerHTML = '&#128266;';
+        }
+      });
+    });
+  }
 </script>
 </body>
 </html>
