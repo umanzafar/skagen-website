@@ -458,23 +458,31 @@
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
   if (window.Vimeo) {
-    var allPlayers = [];
+    var docPlayers = [];
+    var reelEntries = [];
+
+    function muteAllReels(){
+      reelEntries.forEach(function(rp){
+        rp.player.setMuted(true);
+        rp.btn.classList.remove('unmuted');
+        rp.btn.innerHTML = '&#128263;';
+      });
+    }
 
     document.querySelectorAll('.video-card.embed:not(.reel) iframe').forEach(function(iframe){
       var p = new Vimeo.Player(iframe);
-      allPlayers.push(p);
+      docPlayers.push(p);
       p.on('play', function(){
-        allPlayers.forEach(function(other){ if (other !== p) other.pause(); });
+        docPlayers.forEach(function(other){ if (other !== p) other.pause(); });
+        muteAllReels();
       });
     });
 
-    var reelPlayers = [];
     document.querySelectorAll('.video-card.reel.embed').forEach(function(card){
       var iframe = card.querySelector('iframe');
       var btn = card.querySelector('.reel-sound-btn');
       var player = new Vimeo.Player(iframe);
-      reelPlayers.push({ player: player, btn: btn });
-      allPlayers.push(player);
+      reelEntries.push({ player: player, btn: btn });
 
       btn.addEventListener('click', function(){
         var isUnmuted = btn.classList.contains('unmuted');
@@ -483,15 +491,16 @@
           btn.classList.remove('unmuted');
           btn.innerHTML = '&#128263;';
         } else {
-          reelPlayers.forEach(function(rp){
+          reelEntries.forEach(function(rp){
             if (rp.player !== player) {
               rp.player.setMuted(true);
               rp.btn.classList.remove('unmuted');
               rp.btn.innerHTML = '&#128263;';
             }
           });
-          allPlayers.forEach(function(other){ if (other !== player) other.pause(); });
+          docPlayers.forEach(function(dp){ dp.pause(); });
           player.setMuted(false);
+          player.play();
           btn.classList.add('unmuted');
           btn.innerHTML = '&#128266;';
         }
