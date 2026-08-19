@@ -93,12 +93,11 @@
   .cs-block p{font-size:1.03rem;line-height:1.75;color:var(--ink);margin-bottom:16px}
   .cs-block p:last-child{margin-bottom:0}
 
-  .cs-shot{
-    margin-top:28px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
-    background:repeating-linear-gradient(135deg, #2A2698 0 14px, #211C7C 14px 28px);
-    aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
-    font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;padding:20px;
-  }
+  .cs-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media (max-width:700px){.cs-gallery{grid-template-columns:1fr}}
+  .cs-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block}
+  .cs-photo{margin-top:20px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .cs-photo img{width:100%;display:block}
 
   .cs-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
   @media (max-width:720px){.cs-stats-grid{grid-template-columns:1fr 1fr}}
@@ -198,7 +197,14 @@
       <p>We led with education, not a hard sell. Most homeowners don't know why loft or wall insulation actually matters, so we built graphical explainer content around the case for it — the energy savings, the comfort difference, what "insulation" actually solves. Alongside that, we produced before-and-after footage of the team's own installs to make the work tangible.</p>
       <p>Once that content existed, we ran it as Meta ad creative — a campaign built specifically around external wall insulation, live for about 30 days.</p>
     </div>
-    <div class="cs-shot">[ Screenshot of the explainer / before-and-after ad creative goes here ]</div>
+    <div class="cs-gallery">
+      <img src="smc-ad-1.jpg" alt="SMC ad creative: External wall insulation available in Luton">
+      <img src="smc-ad-2.jpg" alt="SMC ad creative: external wall insulation project in progress">
+      <img src="smc-ad-3.jpg" alt="SMC ad creative: free external wall insulation, save 47% on energy bills">
+    </div>
+    <div class="cs-photo">
+      <img src="smc-before-after.jpg" alt="Before and after photo of a roof replacement job">
+    </div>
   </div>
 </section>
 
@@ -219,7 +225,9 @@
       <div class="cs-stat"><span class="num">68</span><span class="label">unique clicks</span></div>
       <div class="cs-stat"><span class="num">£0.68</span><span class="label">cost per click</span></div>
     </div>
-    <div class="cs-shot">[ Meta Ads Manager results screenshot goes here ]</div>
+    <div class="cs-photo">
+      <img src="smc-dashboard-results.jpg" alt="Meta Ads Manager campaign results for SMC's external wall insulation campaign">
+    </div>
   </div>
 </section>
 
