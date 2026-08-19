@@ -381,18 +381,6 @@
     border:1px solid var(--line);background:#000;
     width:auto;max-width:360px;margin:0 auto;
   }
-  .about-founder-video img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7}
-  .af-play-btn{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);
-    display:flex;align-items:center;justify-content:center;color:var(--navy-deep);
-    font-size:1.1rem;box-shadow:0 10px 26px rgba(0,0,0,.4);
-  }
-  .af-video-tag{
-    position:absolute;bottom:16px;left:16px;background:var(--yellow);color:var(--black);
-    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.74rem;
-    padding:8px 16px;border-radius:8px;
-  }
   @media (max-width:860px){.about-founder-video{width:100%;max-width:340px;margin:0 auto}}
 
   /* ---- faq ---- */
@@ -736,10 +724,9 @@
           <p>In 2025 he received the Rising Tech IT Award from the Special Communications Organisation (SCO), one of the largest telecommunications organisations in Pakistan, for building and scaling Skagen into a full in-house production and marketing operation.</p>
         </div>
       </div>
-      <div class="about-founder-video">
-        <img src="founder.jpg" alt="Huraira Ghafoor (Sham Kashmiri), Founder and CEO of Skagen">
-        <span class="af-play-btn">&#9654;</span>
-        <span class="af-video-tag">Founder video, coming soon</span>
+      <div class="about-founder-video video-card reel embed">
+        <iframe src="https://player.vimeo.com/video/1219681938?background=1&amp;muted=1&amp;autoplay=1&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Huraira Ghafoor, Founder and CEO of Skagen"></iframe>
+        <button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button>
       </div>
     </div>
   </div>
