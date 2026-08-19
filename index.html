@@ -63,7 +63,7 @@
   }
   .eyebrow::before{content:"";width:7px;height:7px;background:var(--yellow);border:1.5px solid rgba(255,255,255,.4);border-radius:2px;display:inline-block}
   section{padding:96px 0}
-  @media (max-width:720px){section{padding:64px 0}}
+  @media (max-width:720px){section{padding:40px 0}}
 
   /* ---- buttons ---- */
   .btn{
@@ -154,6 +154,10 @@
 
   /* ---- proof bar ---- */
   #proof{padding:52px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  @media (max-width:720px){
+    #hero{padding-top:36px;padding-bottom:32px}
+    #proof{padding:32px 0}
+  }
   #proof .wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:26px}
   .proof-label{font-family:'Inter',sans-serif;font-weight:500;font-size:.92rem;text-transform:none;letter-spacing:normal;color:var(--ink)}
   .proof-track-wrap{
@@ -173,6 +177,7 @@
 
   /* ---- section headings ---- */
   .sec-head{max-width:640px;margin-bottom:52px}
+  @media (max-width:720px){.sec-head{margin-bottom:32px}}
   .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
   .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:14px}
   .sec-head p{margin-top:14px;color:var(--muted);font-size:1.05rem}
@@ -268,6 +273,7 @@
 
   /* ---- view more ---- */
   .view-more-wrap{text-align:center;margin-top:36px}
+  @media (max-width:720px){.view-more-wrap{margin-top:20px}}
   .view-more{
     display:inline-flex;align-items:center;gap:8px;
     font-family:'IBM Plex Mono',monospace;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;
@@ -594,29 +600,13 @@
     </div>
     <div class="results-grid">
       <a class="result-card" href="case-study-wisdom-school.html">
-        <div class="video-card" style="background-image:url('thumb-wisdom.png');background-size:cover;background-position:center">
-          <span class="case-badge">Case Study</span>
-          <span class="play-btn">&#9654;</span>
-          <div class="vc-bottom">
-            <span class="vc-caption">Wisdom School System campaign</span>
-            <div class="vc-progress"><i></i></div>
-            <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-          </div>
-        </div>
+        <div class="video-card" style="background-image:url('thumb-wisdom.png');background-size:cover;background-position:center"></div>
         <div class="result-num">65</div>
         <div class="result-label">admissions from 84 messaging conversations, targeted admissions ads replacing boosted posts.</div>
         <span class="result-link">View case study &rarr;</span>
       </a>
       <a class="result-card" href="case-study-uk-insulation.html">
-        <div class="video-card" style="background-image:url('thumb-smc.png');background-size:cover;background-position:center">
-          <span class="case-badge">Case Study</span>
-          <span class="play-btn">&#9654;</span>
-          <div class="vc-bottom">
-            <span class="vc-caption">UK insulation company campaign</span>
-            <div class="vc-progress"><i></i></div>
-            <div class="vc-controls"><span class="vc-time">0:00 / 0:00</span><span class="vc-expand">&#10530;</span></div>
-          </div>
-        </div>
+        <div class="video-card" style="background-image:url('thumb-smc.png');background-size:cover;background-position:center"></div>
         <div class="result-num">20</div>
         <div class="result-label">qualified leads at &pound;2.40 each for a brand-new company's first ever campaign.</div>
         <span class="result-link">View case study &rarr;</span>
